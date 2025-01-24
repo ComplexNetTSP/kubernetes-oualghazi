@@ -1,0 +1,13 @@
+ Stratégies de liveness probing
+Stratégie pour les serveurs web
+Méthode : httpGet
+L'objectif est de s'assurer que le serveur web fonctionne et répond aux requêtes des clients.
+Définir un délai initial de 5 secondes (initialDelaySeconds: 5) pour laisser le serveur web démarrer correctement avant les premières vérifications.
+Une période de vérification toutes les 10 secondes (periodSeconds: 10) est suffisante pour détecter rapidement les problèmes.
+Stratégie pour la base de données
+Méthode : tcpSocket
+Vérifie que le port 27017 est accessible et qu'il accepte les connexions TCP.
+Un délai initial de 10 secondes (initialDelaySeconds: 10) est défini pour permettre à MongoDB de démarrer complètement.
+Une période de 15 secondes (periodSeconds: 15) permet de vérifier régulièrement l'état de la base sans surcharger Kubernetes.
+
+La clé failureThreshold (dans notre cas est de 3) dans une configuration de probe Kubernetes détermine le nombre de fois que la probe peut échouer avant que Kubernetes considère que le conteneur est en échec.
