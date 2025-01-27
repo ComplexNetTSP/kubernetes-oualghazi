@@ -1,0 +1,11 @@
+mongodb:
+  hostname: mongodb-service
+  port: 27017
+
+webdb:
+  image: oualghazi/flask-app:v4
+  replicaCount: 3
+
+webnodb:
+  image: oualghazi/flask-img
+  replicaCount: 3
