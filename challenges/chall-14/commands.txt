@@ -1,0 +1,1 @@
+kubectl run load-test --image=busybox -- /bin/sh -c "while true; do wget -q -O- http://webnodb-service; done"
