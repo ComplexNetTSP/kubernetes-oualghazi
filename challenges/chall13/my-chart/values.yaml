@@ -1,0 +1,11 @@
+mongodb:
+  hostname: mongodb-service
+  port: 27017
+
+webdb:
+  image: oualghazi/webdb
+  replicaCount: 3
+
+webnodb:
+  image: oualghazi/webnodb
+  replicaCount: 3
